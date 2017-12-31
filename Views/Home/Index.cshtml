@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+<link href="~/Content/fullcalendar.min.css" rel="stylesheet" />
+<link href="~/Content/fullcalendar.print.css" rel="stylesheet" />
+
+<div class="row">
+    <div class="col-lg-12">
+        <div id="calendar">
+
+        </div>
+    </div>
+</div>
+@section scripts
+{
+<script src="~/Scripts/moment.min.js"></script>
+    <script src="~/Scripts/fullcalendar.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#calendar').fullCalendar({
+                events:'api/SchApi/'
+            });
+        });
+    </script>
+}

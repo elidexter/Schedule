@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Concert.Models.SalaModel>
+
+@{
+    ViewBag.Title = "Salas";
+}
+
+<h2>Lista</h2>
+
+<p>
+    @Html.ActionLink("Nueva", "Create")
+</p>
+<table class="table table-condensed">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SalaId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalaId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.SalaId }) |           
+            @Html.ActionLink("Delete", "Delete", new { id = item.SalaId })
+        </td>
+    </tr>
+}
+
+</table>
